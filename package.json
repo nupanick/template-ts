@@ -4,9 +4,10 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "build": "tsc && babel source -d build -x .ts",
-        "build-prod": "tsc && babel source -d dist -x .ts --ignore **/*.test.ts",
-        "test": "npm run build && jest"
+        "build": "npm run build:ts && npm run build:js",
+        "build:ts": "tsc --outDir build --emitDeclarationOnly",
+        "build:js": "babel source -d build -x .ts --ignore **/*/.test.ts",
+        "test": "tsc --noEmit && jest"
     },
     "author": "",
     "license": "ISC",
