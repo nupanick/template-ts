@@ -1,9 +1,9 @@
 {
-    "include": ["source", "test"],
+    "include": ["source"],
     "compilerOptions": {
-        "emitDeclarationOnly": true,
-        "declaration": true,
         "allowSyntheticDefaultImports": true,
-        "moduleResolution": "node"
+        "declaration": true,
+        "emitDeclarationOnly": true,
+        "outDir": "build",
     }
 }

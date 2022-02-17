@@ -4,10 +4,9 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "build": "npm run build:types && npm run build:js",
-        "build:types": "tsc --emitDeclarationOnly",
-        "build:js": "babel source -d build --extensions \".ts\"",
-        "test": "jest"
+        "build": "tsc && babel source -d build -x .ts",
+        "build-prod": "tsc && babel source -d dist -x .ts --ignore **/*.test.ts",
+        "test": "npm run build && jest"
     },
     "author": "",
     "license": "ISC",
